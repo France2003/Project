@@ -10,6 +10,7 @@
     max-width: 100%;
     /* position: relative; */
     /* height: 1100px; */
+    scroll-behavior: smooth;
 }
 .main .bgr img{
     display: flex;

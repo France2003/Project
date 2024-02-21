@@ -4,6 +4,7 @@
     margin: 0;
 }
 .menu{
+    scroll-behavior: smooth;
     /* background-color: rgb(30,30,42); */
     /* margin-top: 160px; */
     width: 150px;

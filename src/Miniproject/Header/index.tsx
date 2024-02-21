@@ -1,8 +1,15 @@
 import { IoSearch } from "react-icons/io5";
 import './index.css'
+import { Helmet } from "react-helmet";
 const Header = () => {
   return (
     <div className="header">
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>Responsive Movies Website</title>
+            <link rel="canonical" href="http://localhost:5173/Project#Home" />
+            <meta name="description" content="Learn React at Softech Aptech" />
+        </Helmet>
         <div className="logo">
             <h1>MOVIE<strong>VENNIE</strong></h1>
         </div>
