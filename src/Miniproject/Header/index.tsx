@@ -1,30 +1,38 @@
+import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
-import './index.css'
-import { Helmet } from "react-helmet";
-const Header = () => {
-  return (
-    <div className="header">
-        <Helmet>
-            <meta charSet="utf-8" />
-            <title>Responsive Movies Website</title>
-            <link rel="canonical" href="http://localhost:5173/Project#Home" />
-            <meta name="description" content="Learn React at Softech Aptech" />
-        </Helmet>
-        <div className="logo">
-            <h1>MOVIE<strong>VENNIE</strong></h1>
-        </div>
-        <div className="SearchAndUser">
-            <div className="search">
-                <input type="text" name="search" id="search" placeholder="Search Movie" /> 
-                <div className="iconSearch">
-                    <IoSearch />
-                </div>
+import { AiOutlineHome } from "react-icons/ai";
+import { SiFireship } from "react-icons/si";
+import { MdExplore } from "react-icons/md";
+import { PiTelevisionSimpleBold } from "react-icons/pi";
+import { FaRegHeart } from "react-icons/fa";
+import NavbarItem from "../../conponents/NavbarItem";
+
+
+
+function Header() {
+    return (
+        <header>    
+        <div className="nav container w-[1060px]">   
+            <Link className="logo" to={`/Project`}>MOVIE<span>VENNIE</span></Link>     
+            <div className="search-box h-10">
+                <input type="search" name="" id="search-input" placeholder="Search Movie"/>
+                <IoSearch className="text-xl"/>
             </div>
-            <div className="user">
-                <img src="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/346279069_782256326742243_2189200350255964972_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeEHD8S1nBajTAY8Nxj6hADpggKd_2bWV9eCAp3_ZtZX1ymQqHd_Xwa65l8nbyhrGNG0ObJVmS6jHSTCaqpCMz0e&_nc_ohc=8ldNzXefw_sAX_X63Yt&_nc_ht=scontent.fdad3-6.fna&oh=00_AfAJMYBy3-NY3ktJ6AeaWh57ZNP2h9tXigGbe3Axa1MO7w&oe=65BB7CA7" />
+            
+            <a href="#" className="user">
+                <img src="https://www.footballtodaylive.com/team-logo/Phil-Foden.png" alt="" className="user-img"/>
+            </a>
+
+            <div className="navbar">
+                <Link to={`/Project`}><NavbarItem type="nav-active" icon={<AiOutlineHome />} label="Home" /></Link>
+                <Link to={`/Project/popular`}><NavbarItem icon={<SiFireship />} label="Popular" /></Link>
+                <Link to={`/Project/now_playing`}><NavbarItem icon={<MdExplore />} label="Now Playing" /></Link>
+                <Link to={`/Project/movies`}><NavbarItem icon={<PiTelevisionSimpleBold />} label="Movies" /></Link>
+                <Link to={`/Project/favourite`}><NavbarItem icon={<FaRegHeart />} label="Favourite" /></Link>             
             </div>
         </div>
-    </div>
-  )
+    </header>
+    );
 }
-export default Header
+
+export default Header;
